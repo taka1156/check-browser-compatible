@@ -1,5 +1,5 @@
-const changeText = (flag, format) => {
-  if (flag) {
+const changeText = (isSupport, format) => {
+  if (isSupport) {
     return `[${format}]` + 'に対応しています。';
   } else {
     return `[${format}]` + 'に対応していません。';
@@ -21,7 +21,7 @@ const supportFormat = (format) => {
   return isSupport;
 };
 
-const updateResult = (id = 'result', formats = ['webp', 'avif', 'apng']) => {
+const updateResult = (id = 'result', formats = ['png', 'webp', 'avif']) => {
   const result = formats.map((format) => {
     const isSupport = supportFormat(format);
     const text = `<p> ${changeText(isSupport, format)} </p>`;
