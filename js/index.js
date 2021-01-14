@@ -24,7 +24,7 @@ const supportFormat = (format) => {
 const updateResult = (id = 'result', formats = ['png', 'webp', 'avif']) => {
   const result = formats.map((format) => {
     const isSupport = supportFormat(format);
-    const text = `<p> ${changeText(isSupport, format)} </p>`;
+    const text = `<p> ${changeText(isSupport, format)} </p> <img src="./img/${format}.${format}" alt="${format}">`;
     return text;
   });
 
